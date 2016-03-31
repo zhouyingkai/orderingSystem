@@ -37,9 +37,11 @@ public class MyServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name=request.getParameter("name");
 		String age=request.getParameter("age");
+		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out=response.getWriter();
-		out.println("name="+name+"age="+age);
-		System.out.println("name="+name+"\n age="+age);
+		String str=new String(name.getBytes("iso-8859-1"),"UTF-8");//зЊТы
+		out.println("name="+str+"age="+age);
+		System.out.println("name="+str+"\n age="+age);
 	}
 
 }
