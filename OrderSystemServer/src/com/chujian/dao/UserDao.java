@@ -4,6 +4,6 @@ import com.chujian.model.User;
 
 public interface UserDao {
 	public User userLogin(String account,String password);
-	public User userRegister(User user);
-
+	public boolean userRegister(String  phone,String password);
+	
 }

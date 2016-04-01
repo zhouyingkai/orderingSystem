@@ -10,17 +10,165 @@ package com.chujian.orderingsystem;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int base_end_color_default=0x7f040015;
+        public static final int base_end_color_pressed=0x7f040017;
+        /**  ITEM BACKGROUND COLOR - STATE - DEFAULT 
+         */
+        public static final int base_start_color_default=0x7f040014;
+        /**  ITEM BACKGROUND COLOR - STATE - PRESSED 
+ <color name="base_start_color_pressed">#ff3590c4</color>
+	<color name="base_end_color_pressed">#ff2570ba</color> 
+         */
+        public static final int base_start_color_pressed=0x7f040016;
+        /**  黑色 
+         */
+        public static final int color_black=0x7f040002;
+        /**  蓝色 
+         */
+        public static final int color_blue=0x7f04000a;
+        /**  棕色 
+         */
+        public static final int color_brown=0x7f04000e;
+        /**  深红色 
+         */
+        public static final int color_deep_red=0x7f040004;
+        /**  灰色 
+         */
+        public static final int color_gray=0x7f040006;
+        /**  深灰色 
+         */
+        public static final int color_gray_deep=0x7f040009;
+        /**  浅灰色 
+         */
+        public static final int color_gray_light=0x7f040007;
+        /**  浅中灰 
+         */
+        public static final int color_gray_line=0x7f040008;
+        /**  绿色 
+         */
+        public static final int color_green=0x7f04000c;
+        public static final int color_hei_8=0x7f04001c;
+        /**  橙色 
+         */
+        public static final int color_orange=0x7f04000f;
+        /**  浅橙色 
+         */
+        public static final int color_orange_light=0x7f040010;
+        /**  粉色 
+         */
+        public static final int color_pink=0x7f040011;
+        /**  浅粉色 
+         */
+        public static final int color_pink_light=0x7f040012;
+        /**  紫色 
+         */
+        public static final int color_purple=0x7f04000d;
+        /**  红色 
+         */
+        public static final int color_red=0x7f040003;
+        /**  白色 
+         */
+        public static final int color_white=0x7f040005;
+        /**  黄色 
+         */
+        public static final int color_yellow=0x7f04000b;
+        public static final int dialog_transparent=0x7f04001a;
+        /**  图案解锁 
+         */
+        public static final int gesture_background=0x7f04001b;
+        /**  灰色背景 
+         */
+        public static final int layout_background=0x7f040000;
+        /**  LIST BORDER COLOR 
+         */
+        public static final int rounded_container_border=0x7f040013;
+        /**  list分割线 
+         */
+        public static final int split_line=0x7f040001;
+        /**  ITEM TEXT COLORS - STATES - PRESSED AND DEFAULT 
+         */
+        public static final int text_color_default=0x7f040018;
+        public static final int text_color_pressed=0x7f040019;
+    }
+    public static final class dimen {
+        /**  外间距大小 
+         */
+        public static final int dp_02=0x7f05000b;
+        public static final int dp_05=0x7f05000c;
+        public static final int dp_08=0x7f05000d;
+        public static final int dp_10=0x7f05000e;
+        public static final int dp_12=0x7f05000f;
+        public static final int dp_15=0x7f050010;
+        public static final int dp_20=0x7f050011;
+        public static final int dp_25=0x7f050012;
+        public static final int dp_30=0x7f050013;
+        public static final int dp_35=0x7f050014;
+        public static final int dp_40=0x7f050015;
+        public static final int dp_50=0x7f050016;
+        public static final int dp_55=0x7f050017;
+        public static final int dp_60=0x7f050018;
+        public static final int dp_70=0x7f050019;
+        public static final int dp_80=0x7f05001a;
+        public static final int dp_90=0x7f05001b;
+        /**  文字大小 
+         */
+        public static final int sp_10=0x7f050000;
+        public static final int sp_12=0x7f050001;
+        public static final int sp_14=0x7f050002;
+        public static final int sp_16=0x7f050003;
+        public static final int sp_18=0x7f050004;
+        public static final int sp_20=0x7f050005;
+        public static final int sp_22=0x7f050006;
+        public static final int sp_24=0x7f050007;
+        public static final int sp_30=0x7f050008;
+        public static final int sp_40=0x7f050009;
+        public static final int sp_50=0x7f05000a;
+    }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int bg_login=0x7f020000;
+        public static final int bg_pink=0x7f020001;
+        public static final int bt_blue=0x7f020002;
+        public static final int bt_red_login=0x7f020003;
+        public static final int cb_eye_select=0x7f020004;
+        public static final int checkbox_selector=0x7f020005;
+        public static final int i_chockbox_1=0x7f020006;
+        public static final int i_chockbox_2=0x7f020007;
+        public static final int i_delete=0x7f020008;
+        public static final int i_eye=0x7f020009;
+        public static final int i_eye_show=0x7f02000a;
+        public static final int i_lock=0x7f02000b;
+        public static final int i_person=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int line_imaginary=0x7f02000e;
+        public static final int logo=0x7f02000f;
+        public static final int trans=0x7f020010;
     }
     public static final class id {
-        public static final int button1=0x7f060000;
+        public static final int bt_login=0x7f08000c;
+        public static final int bt_next=0x7f080004;
+        public static final int bt_register=0x7f08000d;
+        public static final int btn_confirm=0x7f080009;
+        public static final int btn_go=0x7f08000e;
+        public static final int cb_eye=0x7f08000a;
+        public static final int cb_remember_psd=0x7f08000b;
+        public static final int cb_show_psd=0x7f080007;
+        public static final int check_box=0x7f080003;
+        public static final int et_phone=0x7f080000;
+        public static final int et_pwd=0x7f080006;
+        public static final int ib_delete_phone=0x7f080001;
+        public static final int tv_forget_pwd=0x7f080008;
+        public static final int tv_phone=0x7f080002;
+        public static final int tv_tel_num=0x7f080005;
     }
     public static final class layout {
-        public static final int activiy_main=0x7f030000;
+        public static final int act_regist_1=0x7f030000;
+        public static final int act_regist_2=0x7f030001;
+        public static final int activity_login_regist=0x7f030002;
+        public static final int activiy_main=0x7f030003;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
+        public static final int app_name=0x7f060000;
     }
     public static final class style {
         /** 
@@ -44,10 +192,50 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f070001;
+        /**  自定义dialog 
+         */
+        public static final int CustomDialog=0x7f070002;
+        public static final int CustomProgressDialog=0x7f070003;
+        /**  灰色竖线 
+         */
+        public static final int line_gray_h_full=0x7f070004;
+        /**  灰色横线 
+         */
+        public static final int line_gray_w_full=0x7f070005;
+        /**  灰色横线 左右间隔10dp
+         */
+        public static final int line_gray_w_h=0x7f070006;
+        /**  虚线 
+         */
+        public static final int line_imaginary_w=0x7f070007;
+        /**  白色横线 
+         */
+        public static final int line_white_w=0x7f070008;
+        /**  黑色文字 
+         */
+        public static final int text_black=0x7f07000b;
+        /**  灰色文字 
+         */
+        public static final int text_gray=0x7f07000a;
+        /**  绿色文字 
+         */
+        public static final int text_green=0x7f07000c;
+        /**  橙色文字 
+         */
+        public static final int text_orange=0x7f07000d;
+        /**  粉色文字 
+         */
+        public static final int text_pink=0x7f07000e;
+        /**  红色文字 
+         */
+        public static final int text_red=0x7f07000f;
+        /**  白色文字 
+         */
+        public static final int text_white=0x7f070009;
     }
 }

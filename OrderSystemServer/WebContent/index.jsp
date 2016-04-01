@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="MyServlet" method="get">
-		name:<input type="text" name="name"><br>
-		age:<input type="text" name="age"><br>
+	<form action="LoginServlet" method="get">
+		phoneNumb:<input type="text" name="phoneNumb"><br>
+		password:<input type="text" name="password"><br>
 		submit:<input type="submit" value="submit">
 	</form>
 </body>
