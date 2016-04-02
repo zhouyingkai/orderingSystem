@@ -86,7 +86,12 @@ public class LoginActivity extends Activity implements OnClickListener{
 				// TODO Auto-generated method stub
 				super.handleMessage(msg);
 				String str=(String) msg.obj;
-				if(str!=null){
+				if(str.trim().equals("loginFailed")){
+					Toast.makeText(LoginActivity.this,str+",用户名或者密码错误", Toast.LENGTH_SHORT).show();
+					
+				}
+				else
+				{
 					Toast.makeText(LoginActivity.this,"login succed,result="+str, Toast.LENGTH_SHORT).show();
 //					保存用户名和密码
 					if(mRememberPsd.isChecked()){

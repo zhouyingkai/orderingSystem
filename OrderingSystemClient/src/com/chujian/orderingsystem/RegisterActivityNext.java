@@ -52,7 +52,9 @@ public class RegisterActivityNext extends Activity implements OnClickListener{
 				if (str.trim().equals("alreadyRegistered")) {
 					tvPhoneN.setTextColor(Color.RED);
 					Toast.makeText(RegisterActivityNext.this, "账号已经被注册",Toast.LENGTH_SHORT).show();
-				} else if (str.trim().equals("success")) {
+//					RegisterActivityNext.this.finish();
+				} 
+				else if (str.trim().equals("success")) {
 					Toast.makeText(RegisterActivityNext.this, str,Toast.LENGTH_SHORT).show();
 					Intent intent = new Intent(RegisterActivityNext.this,LoginActivity.class);
 					startActivity(intent);
@@ -68,7 +70,7 @@ public class RegisterActivityNext extends Activity implements OnClickListener{
 		
 //		获取电话号码
 		Intent intent=getIntent();
-		 phoneNumb=intent.getStringExtra("phoneNumb");
+		phoneNumb=intent.getStringExtra("phoneNumb");
 		tvPhoneN.setText(phoneNumb);
 		
 //		设置密码 
@@ -98,7 +100,7 @@ public class RegisterActivityNext extends Activity implements OnClickListener{
 		String password=etPassword.getText().toString();
 //		Toast.makeText(RegisterActivityNext.this, phoneNumb+"\n"+password, Toast.LENGTH_SHORT).show();
 		String url=Constan.BASE_URL+"RegisterServlet"+"?phoneNumb="+phoneNumb+"&password="+password;
-		new HttpClientThread(url,mHandler).start();;
+		new HttpClientThread(url,mHandler).start();
 	}
 }
 

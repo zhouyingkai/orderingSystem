@@ -211,12 +211,12 @@ public final class R {
         public static final int bt_login=0x7f0a0010;
         public static final int bt_next=0x7f0a0008;
         public static final int bt_register=0x7f0a0011;
-        public static final int btn_confirm=0x7f0a000d;
+        public static final int btn_confirm=0x7f0a000c;
         public static final int btn_fg_confirm=0x7f0a0003;
         public static final int btn_go=0x7f0a0012;
-        public static final int cb_eye=0x7f0a000e;
+        public static final int cb_eye=0x7f0a000d;
         public static final int cb_fg_show_psd=0x7f0a0002;
-        public static final int cb_remember_psd=0x7f0a000f;
+        public static final int cb_remember_psd=0x7f0a000e;
         public static final int cb_show_psd=0x7f0a000b;
         public static final int check_box=0x7f0a0007;
         public static final int et_fg_pwd=0x7f0a0001;
@@ -224,7 +224,7 @@ public final class R {
         public static final int et_pwd=0x7f0a000a;
         public static final int ib_delete_phone=0x7f0a0005;
         public static final int tv_fg_tel_num=0x7f0a0000;
-        public static final int tv_forget_pwd=0x7f0a000c;
+        public static final int tv_forget_pwd=0x7f0a000f;
         public static final int tv_phone=0x7f0a0006;
         public static final int tv_tel_num=0x7f0a0009;
     }

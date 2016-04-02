@@ -81,6 +81,31 @@ public class UserDaoImpl implements UserDao {
 		return false;
 	}
 
+	@Override
+	public boolean changePassword(String account, String password) {
+		// TODO Auto-generated method stub
+//		String sql=" update user set user_password= '"+"?"+"'where user_phone='"+"?"+"' ";
+		String sql=" update user set user_password=? where user_phone= ? ";
+		Connection conn=DBUtil.getConnection();
+		try {
+			PreparedStatement ptmt=(PreparedStatement) conn.prepareStatement(sql);
+			ptmt.setString(1, password);
+			ptmt.setString(2, account);
+			
+			int count =ptmt.executeUpdate();
+			if(count>0){
+				return true;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return false;
+	}
+
 
 
 }

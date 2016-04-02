@@ -136,12 +136,12 @@ int drawable trans 0x7f02002a
 int id bt_login 0x7f0a0010
 int id bt_next 0x7f0a0008
 int id bt_register 0x7f0a0011
-int id btn_confirm 0x7f0a000d
+int id btn_confirm 0x7f0a000c
 int id btn_fg_confirm 0x7f0a0003
 int id btn_go 0x7f0a0012
-int id cb_eye 0x7f0a000e
+int id cb_eye 0x7f0a000d
 int id cb_fg_show_psd 0x7f0a0002
-int id cb_remember_psd 0x7f0a000f
+int id cb_remember_psd 0x7f0a000e
 int id cb_show_psd 0x7f0a000b
 int id check_box 0x7f0a0007
 int id et_fg_pwd 0x7f0a0001
@@ -149,7 +149,7 @@ int id et_phone 0x7f0a0004
 int id et_pwd 0x7f0a000a
 int id ib_delete_phone 0x7f0a0005
 int id tv_fg_tel_num 0x7f0a0000
-int id tv_forget_pwd 0x7f0a000c
+int id tv_forget_pwd 0x7f0a000f
 int id tv_phone 0x7f0a0006
 int id tv_tel_num 0x7f0a0009
 int layout act_forget_psd 0x7f030000
