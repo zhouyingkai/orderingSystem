@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:33
+-keep class cn.smssdk.demo.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:44
+-keep class com.mob.tools.MobUIShell { <init>(...); }
+

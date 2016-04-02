@@ -3,6 +3,11 @@ package com.chujian.orderingsystem;
 
 
 import java.io.IOException;
+import java.util.HashMap;
+
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.gui.RegisterPage;
 
 import com.chujian.HttpUtil.Constan;
 import com.chujian.HttpUtil.HttpClientUtil;
@@ -16,6 +21,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -37,6 +43,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 	private TextView mForgetPass;
 	private CheckBox mRememberPsd;
 	
+	private boolean smsFlag=false;
+	private String smsPhone;
 	SharedPreferences pref;
 	Editor editor;
 	
@@ -135,16 +143,15 @@ public class LoginActivity extends Activity implements OnClickListener{
 			String passwd=mPassword.getText().toString();
 			String url=Constan.BASE_URL+"LoginServlet"+"?phoneNumb="+phone+"&password="+passwd;
 			new HttpClientThread(url,handler).start();;
-//			String url=Constan.BASE_URL+"LoginServlet"+"?phoneNumb="+phone+"&password="+passwd;
 			Toast.makeText(LoginActivity.this,"login ", Toast.LENGTH_SHORT).show();
 			break;
 //		注册
 		case R.id.bt_register:
-			intent.setClass(LoginActivity.this, RegisterActiviy.class);
-			startActivity(intent);
+			SmsValidate(true);
 			break;
 //		忘记密码
 		case R.id.tv_forget_pwd:
+			SmsValidate(false);
 			break;
 //		删除电话号码
 		case R.id.ib_delete_phone:
@@ -156,5 +163,51 @@ public class LoginActivity extends Activity implements OnClickListener{
 		}
 		
 	}
+	
+	private void SmsValidate( boolean flag){
+//		**************************
+//		mod sms sdk 接入
+		//打开注册页面
+		final boolean smsFlag=flag;
+		RegisterPage registerPage = new RegisterPage();
+		registerPage.setRegisterCallback(new EventHandler() {
+		public void afterEvent(int event, int result, Object data) {
+		// 解析注册结果
+		if (result == SMSSDK.RESULT_COMPLETE) {
+		@SuppressWarnings("unchecked")
+		HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
+		String country = (String) phoneMap.get("country");
+		String phone = (String) phoneMap.get("phone"); 
+		smsPhone=phone;//获取电话号码
+		Log.i("LoginActivity", country+" "+phone);
+		Toast.makeText(LoginActivity.this,country+" "+phone, Toast.LENGTH_LONG).show();;
+		Intent intent =new Intent();
+		intent.putExtra("phoneNumb",smsPhone);
+		if(smsFlag){
+//			注册
+			intent.setClass(LoginActivity.this,RegisterActivityNext.class);
+			startActivity(intent);
+			
+		}else{
+//			找回密码
+			intent.setClass(LoginActivity.this,ForgetPasswordAct.class);
+			startActivity(intent);
+		}
+		
+		}else{
+//			验证失败
+//			关闭界面
+			Toast.makeText(LoginActivity.this,"验证失败", Toast.LENGTH_SHORT).show();
+		}
+		}
+		});
+		registerPage.show(this);
+//	*************************
+		Toast.makeText(LoginActivity.this, ""+smsFlag, Toast.LENGTH_SHORT).show();;
+	}
+	
+	
+	
+	
 }
 

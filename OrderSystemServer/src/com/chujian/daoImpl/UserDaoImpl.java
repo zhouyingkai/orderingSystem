@@ -60,6 +60,27 @@ public class UserDaoImpl implements UserDao {
 		return false;
 	}
 
+	@Override
+	public boolean userCheck(String account) {
+		// TODO Auto-generated method stub
+		String sql=" select * from user where user_phone=? ";
+		Connection conn=DBUtil.getConnection();
+		try {
+			PreparedStatement ptmt=(PreparedStatement) conn.prepareStatement(sql);
+			ptmt.setString(1, account);
+			ResultSet rs=ptmt.executeQuery();
+			if(rs.next()){
+				
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+	}
+
 
 
 }

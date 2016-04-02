@@ -1,10 +1,12 @@
 package com.chujian.orderingsystem;
 
+
 import com.chujian.HttpUtil.Constan;
 import com.chujian.Threads.HttpClientThread;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,7 +27,6 @@ public class RegisterActivityNext extends Activity implements OnClickListener{
 	private EditText etPassword;
 	private CheckBox cbShowPsd;
 	private String phoneNumb;
-	
 	private Handler mHandler;
 	
 	@Override
@@ -33,6 +34,8 @@ public class RegisterActivityNext extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_regist_2);
+		
+		
 		btnConfirm=(Button) findViewById(R.id.btn_confirm);
 		tvPhoneN=(TextView) findViewById(R.id.tv_tel_num);
 		etPassword=(EditText) findViewById(R.id.et_pwd);
@@ -40,23 +43,26 @@ public class RegisterActivityNext extends Activity implements OnClickListener{
 		
 		btnConfirm.setOnClickListener(this);
 		
-		mHandler=new Handler(){
+		mHandler = new Handler() {
 			@Override
 			public void handleMessage(Message msg) {
 				// TODO Auto-generated method stub
 				super.handleMessage(msg);
-				String str=(String) msg.obj;
-				if(str.trim().equals("success")){
-					Toast.makeText(RegisterActivityNext.this, str, Toast.LENGTH_SHORT).show();
-					Intent intent=new Intent(RegisterActivityNext.this,LoginActivity.class);
+				String str = (String) msg.obj;
+				if (str.trim().equals("alreadyRegistered")) {
+					tvPhoneN.setTextColor(Color.RED);
+					Toast.makeText(RegisterActivityNext.this, "账号已经被注册",Toast.LENGTH_SHORT).show();
+				} else if (str.trim().equals("success")) {
+					Toast.makeText(RegisterActivityNext.this, str,Toast.LENGTH_SHORT).show();
+					Intent intent = new Intent(RegisterActivityNext.this,LoginActivity.class);
 					startActivity(intent);
 					RegisterActivityNext.this.finish();
-				}else{
-					Toast.makeText(RegisterActivityNext.this, "failed", Toast.LENGTH_SHORT).show();
+				} else {
+					Toast.makeText(RegisterActivityNext.this, "failed",
+							Toast.LENGTH_SHORT).show();
 				}
 			}
 		};
-		
 		
 		
 		
@@ -64,6 +70,7 @@ public class RegisterActivityNext extends Activity implements OnClickListener{
 		Intent intent=getIntent();
 		 phoneNumb=intent.getStringExtra("phoneNumb");
 		tvPhoneN.setText(phoneNumb);
+		
 //		设置密码 
 		cbShowPsd.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
